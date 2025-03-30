@@ -3,9 +3,9 @@
 
 Trabalho Interdisciplinar - Aplicacões Web
 
-`CURSO`: 
+`CURSO`: Análise e desenvolvimento de sistemas
 
-`SEMESTRE:`
+`SEMESTRE:` 1°
 
 `OBJETIVO ODS:` > Inclua os numeros e a descrição do(s) objetivo(s) ODS da ONU que o Projeto vai atender. 
 

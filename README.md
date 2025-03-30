@@ -12,8 +12,7 @@ Trabalho Interdisciplinar - Aplicacões Web
 ## Participantes
 
 Os membros do grupo são: 
-- Fulano da Silva
-- Ciclano Albuquerque
+- Gabriel Pará
 
 > Inclua a lista dos membros da equipe com seus nomes completos.
 

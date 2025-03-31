@@ -17,7 +17,8 @@
 
 ## Slides
 
-Coloque aqui os slides da apresentação
+
+[Lixo Eletrônico.pdf](https://github.com/user-attachments/files/19528957/Lixo.Eletronico.pdf)
 
 ## Vídeo
 

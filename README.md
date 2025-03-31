@@ -15,6 +15,7 @@ Os membros do grupo são:
 - Gabriel Alves de Moura Pará
 - Augusto Cabral Bertoldi Trigueiro
 - Jordan Tancrede Lima Gomes
+- Jair Guilherme Siqueira Da Cunha
 > Inclua a lista dos membros da equipe com seus nomes completos.
 
 # Estrutura do Projeto

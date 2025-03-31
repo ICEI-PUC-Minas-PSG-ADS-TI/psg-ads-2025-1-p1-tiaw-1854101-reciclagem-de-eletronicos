@@ -13,7 +13,7 @@ Trabalho Interdisciplinar - Aplicacões Web
 
 Os membros do grupo são: 
 - Gabriel Alves de Moura Pará
-
+- Augusto Cabral Bertoldi Trigueiro
 > Inclua a lista dos membros da equipe com seus nomes completos.
 
 # Estrutura do Projeto
@@ -26,12 +26,10 @@ Os membros do grupo são:
 6. [Referências](./docs/6-Referências.md)
 7. [Apresentação do trabalho](./docs/apresentacao/README.md) 
 
-
-
 ## Pasta docs
 
 Esta pasta arquiva a documentação dos projetos.
-
+[Documentação.pdf](https://github.com/user-attachments/files/19528199/Documentacao.pdf)
 
 Na pasta `docs`, há uma subpasta `images` que deve arquivar todas as
 imagens utilizadas para a elaboração do documento.

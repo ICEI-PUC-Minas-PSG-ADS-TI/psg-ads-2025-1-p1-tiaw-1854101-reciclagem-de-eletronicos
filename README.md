@@ -16,6 +16,8 @@ Os membros do grupo são:
 - Augusto Cabral Bertoldi Trigueiro
 - Jordan Tancrede Lima Gomes
 - Jair Guilherme Siqueira Da Cunha
+- Vinícius Linhares Luciano
+- Igor Ferreira Gonzalez Diniz 
 > Inclua a lista dos membros da equipe com seus nomes completos.
 
 # Estrutura do Projeto

@@ -10,7 +10,7 @@
 
 ## User Flow
 
-![Exemplo de UserFlow](images/userflow.jpg)
+[User Flow.pdf](https://github.com/user-attachments/files/19528992/Trabalho.pdf)
 
 > Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor
 > mapear todo fluxo de telas do site ou app. Essa técnica funciona
@@ -30,7 +30,22 @@
 > estrutura de um site web e seu relacionamentos entre suas
 > páginas. Um wireframe web é uma ilustração semelhante do
 > layout de elementos fundamentais na interface.
-> 
+
+Home page (página inicial do projeto)
+![home page](https://github.com/user-attachments/assets/a1d62bcb-5a16-4330-b162-c1a03804319e)
+
+Cadastro login
+![cadastro login](https://github.com/user-attachments/assets/6265c459-0d25-4c56-9ff0-ce9ff8ca15b7)
+
+Cadastro de locais
+![cadastro de locais](https://github.com/user-attachments/assets/42ebc997-8e04-4a9d-b4bb-6bf758fd5640)
+
+Perfil do usuário
+![perfil usuario](https://github.com/user-attachments/assets/5254b264-e62e-428c-81ce-c19ab53f8472)
+
+Mapa de locais de reciclagem
+![mapa](https://github.com/user-attachments/assets/fef882bd-fc9b-4c6a-9025-69095900d96a)
+
 > **Links Úteis**:
 > - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
 > - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)

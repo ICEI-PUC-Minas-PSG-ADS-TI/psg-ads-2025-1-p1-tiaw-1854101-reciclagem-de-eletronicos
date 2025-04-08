@@ -17,6 +17,9 @@
 > - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
 > - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
+> O descarte inadequado de lixo eletrônico ainda é uma prática comum no Brasil e em diversas partes do mundo, mesmo com os avanços nas políticas públicas e na conscientização ambiental. Muitas pessoas não sabem onde ou como descartar seus eletrônicos inutilizados, e a falta de acesso a pontos de coleta e informações claras agrava ainda mais o problema. Como consequência, toneladas de resíduos eletrônicos são despejadas em locais impróprios, contaminando o solo, a água e afetando comunidades inteiras.
+
+
 ## Objetivos
 
 > Aqui você deve descrever os objetivos do trabalho indicando que o
@@ -27,7 +30,11 @@
 > 
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+> Desenvolver um aplicativo móvel que facilite o descarte correto de lixo eletrônico, conectando usuários a pontos de coleta e promovendo a conscientização ambiental.
+Objetivos Específicos:
+> Mapear e integrar pontos de coleta de lixo eletrônico em uma base de dados da API do google maps disponivel pelo aplicativo.
 
+> Criar uma interface intuitiva que permita ao usuário identificar rapidamente onde e como descartar diferentes tipos de resíduos eletrônicos.
 ## Justificativa
 
 > Descreva a importância ou a motivação para trabalhar com esta aplicação
@@ -41,7 +48,7 @@
 >
 > **Links Úteis**:
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
-
+> Com o avanço constante da tecnologia e a diminuição do ciclo de vida útil dos dispositivos, o volume de lixo eletrônico descartado cresce de forma preocupante. Muitas pessoas não sabem o destino correto desses materiais e acabam descartando-os de forma inadequada, contribuindo para a poluição ambiental.
 ## Público-Alvo
 
 > Descreva quem serão as pessoas que usarão a sua aplicação indicando os
@@ -54,7 +61,7 @@
 > Adicione informações sobre o público-alvo por meio de uma descrição
 > textual, ou diagramas de personas, mapa de stakeholders, ou como o
 > grupo achar mais conveniente.
-> 
+> O público alvo deste aplicativo é bastante amplo, englobando todos os cidadãos de diferentes faixas etárias que desejam realizar o descarte consciente de seus resíduos eletrônicos, mas não sabem como fazê-lo. Professores, estudantes, técnicos em eletrônica, trabalhadores de empresas de TI e meio ambiente, ETC.
 > **Links Úteis**:
 > - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
 > - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)

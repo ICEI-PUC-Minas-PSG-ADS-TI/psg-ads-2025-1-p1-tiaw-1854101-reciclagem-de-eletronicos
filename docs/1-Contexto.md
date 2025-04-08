@@ -33,7 +33,6 @@
 > Desenvolver um aplicativo móvel que facilite o descarte correto de lixo eletrônico, conectando usuários a pontos de coleta e promovendo a conscientização ambiental.
 Objetivos Específicos:
 > Mapear e integrar pontos de coleta de lixo eletrônico em uma base de dados da API do google maps disponivel pelo aplicativo.
-
 > Criar uma interface intuitiva que permita ao usuário identificar rapidamente onde e como descartar diferentes tipos de resíduos eletrônicos.
 ## Justificativa
 
@@ -61,8 +60,7 @@ Objetivos Específicos:
 > Adicione informações sobre o público-alvo por meio de uma descrição
 > textual, ou diagramas de personas, mapa de stakeholders, ou como o
 > grupo achar mais conveniente.
-> O público alvo deste aplicativo é bastante amplo, englobando todos os cidadãos de diferentes faixas etárias que desejam realizar o descarte consciente de seus resíduos eletrônicos, mas não sabem como fazê-lo. Professores, estudantes, técnicos em eletrônica, trabalhadores de empresas de TI e meio ambiente, ETC.
 > **Links Úteis**:
 > - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
 > - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
- 
+> O público alvo deste aplicativo é bastante amplo, englobando todos os cidadãos de diferentes faixas etárias que desejam realizar o descarte consciente de seus resíduos eletrônicos, mas não sabem como fazê-lo. Professores, estudantes, técnicos em eletrônica, trabalhadores de empresas de TI e meio ambiente, ETC.

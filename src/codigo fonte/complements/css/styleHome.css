@@ -18,6 +18,19 @@ body {
   justify-content: center;
   align-items: center;
 }
+#logoutBtn {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: 600;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#logoutBtn:hover {
+  background-color: #c0392b;
+}
 .card {
   border: none;
   max-width: 500px;

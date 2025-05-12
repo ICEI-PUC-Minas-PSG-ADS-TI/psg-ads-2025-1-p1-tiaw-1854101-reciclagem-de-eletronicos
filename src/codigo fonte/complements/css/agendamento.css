@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+  }
+  
+  .descricao {
+    margin: 10px 0;
+  }
+  
+  #formulario {
+    display: none;
+    margin-top: 20px;
+  }
+  

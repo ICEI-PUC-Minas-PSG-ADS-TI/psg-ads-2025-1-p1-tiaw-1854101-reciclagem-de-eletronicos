@@ -16,7 +16,7 @@
   body, html {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('ECOBYTE.jpeg') no-repeat center center fixed;
+    background: url('backgroundPerfil.jpeg') no-repeat center center fixed;
     background-size: cover;
     color: var(--verde-principal);
   }

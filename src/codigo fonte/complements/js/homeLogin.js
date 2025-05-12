@@ -14,7 +14,7 @@ function checkLogiUser(){
     const usuarioStr = sessionStorage.getItem('usuario');
 
     if(!usuarioStr){
-        location.href = "cadastroUser.html";
+        location.href = "loginUser.html";
     }
     
     usuario = JSON.parse(usuarioStr);
@@ -23,7 +23,7 @@ function checkLogiUser(){
 
 function logoutUser(){
     sessionStorage.clear();
-    location.href = "cadastroUser.html";
+    location.href = "loginUser.html";
 }
 
 function loginUser(email, senha){

@@ -10,7 +10,7 @@ const dados = {
     "Empresas de reciclagem autorizadas farão a retirada no local."
   ],
   "imagem": {
-    "src": "img/lixo.jpg",
+    "src": "complements/img/icone.png",
     "alt": "Imagem de equipamentos eletrônicos em uma lixeira de reciclagem"
   }
 };

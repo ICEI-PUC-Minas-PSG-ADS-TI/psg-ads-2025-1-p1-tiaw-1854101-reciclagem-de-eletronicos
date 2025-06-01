@@ -10,9 +10,31 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="complements/css/styleHome.css" />
-    <script src="complements/js/homeLogin.js"></script>
+
+    <script src="complements/js/homeLogin.js" defer></script>
   </head>
   <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Tenta ler do sessionStorage
+        const usuarioStr = sessionStorage.getItem("usuario");
+        if (!usuarioStr) {
+          // Se não estiver logado, redireciona imediatamente para login
+          window.location.href = "loginUser.html";
+          return;
+        }
+
+        // Se estiver logado, podemos exibir o nome dele
+        const usuario = JSON.parse(usuarioStr);
+        document.getElementById("loginMessage").textContent = `Login: ${usuario.nome}`;
+
+        // Conecta o botão de logout
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+          logoutUser();
+        });
+      });
+    </script>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-white py-3">
       <div class="container">
@@ -42,7 +64,10 @@
     </nav>
 
     <!-- Main -->
-    <p><span id="loginMessage"></span> <button id="logoutBtn">Sair</button></p>
+    <p>
+      <span id="loginMessage"></span>
+      <button id="logoutBtn">Sair</button>
+    </p>
     <div class="main-content">
       <div class="card">
         <div class="card-header">
@@ -55,7 +80,7 @@
           />
         </div>
         <div class="card-body d-flex align-items-center">
-          <a href="#" class="btn btn-success me-3 m-3"
+          <a href="cadastro.html" class="btn btn-success me-3 m-3"
             >CADASTRE-SE COMO USUÁRIO</a
           >
           <a href="#" class="btn btn-success">CADASTRE UM LOCAL</a>
@@ -67,19 +92,5 @@
     <footer>Todos os direitos reservados</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-      window.onload = () => {
-
-        if(checkLogiUser()){
-          document.getElementById('loginMessage').innerHTML = `Login: ${usuario.nome}`;
-        }
-
-        const btnLogout = document.getElementById('logoutBtn');
-        btnLogout.addEventListener("click", ()=>{
-          logoutUser()
-        })
-      }
-    </script>
   </body>
 </html>

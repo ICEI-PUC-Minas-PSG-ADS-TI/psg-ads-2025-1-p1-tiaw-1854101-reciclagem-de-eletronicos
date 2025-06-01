@@ -1,38 +1,46 @@
-const dados= {
-    usuarios: [
-        {id:1, nome:"Lucas", login:"lucas00", senha:"123456", email:"joao@gmail.com"},
-        {id:1, nome:"Pedro", login:"pedro01", senha:"123456", email:"pedro@gmail.com"}
+const BASE_URL = "http://localhost:3000";
 
-    ]
-};
+async function loginUser(email, senha) {
+    try {
+        const resposta = await fetch(
+            `http://localhost:3000/usuarios?email=${email}&senha=${senha}`
+        );
 
-
-//Variável para armazenar usuário logado
-let usuario = null;
-
-function checkLogiUser(){
-    const usuarioStr = sessionStorage.getItem('usuario');
-
-    if(!usuarioStr){
-        location.href = "loginUser.html";
-    }
-    
-    usuario = JSON.parse(usuarioStr);
-    return true
-}
-
-function logoutUser(){
-    sessionStorage.clear();
-    location.href = "loginUser.html";
-}
-
-function loginUser(email, senha){
-    const usuarioObj = dados.usuarios.find(usuario => usuario.email === email && usuario.senha === senha);
-    if(!usuarioObj){
+        if (resposta.status === 200) {
+            // Extrai os dados retornados (sem campo senha)
+            const usuario = await resposta.json();
+            // Guarda o usuário logado no sessionStorage
+            sessionStorage.setItem("usuario", JSON.stringify(usuario));
+            return true;
+        } else if (resposta.status === 401) {
+            return false;
+        } else {
+            console.error("Erro inesperado no login:", resposta.status);
+            return false;
+        }
+    } catch (err) {
+        console.error("Falha ao conectar com backend:", err);
         return false;
     }
-    else{
-        sessionStorage.setItem('usuario', JSON.stringify(usuarioObj));
-        return true;
-    }
 }
+
+
+function checkLoginUser() {
+    const usuarioStr = sessionStorage.getItem("usuario");
+    if (!usuarioStr) {
+        window.location.href = "loginUser.html";
+        return false;
+    }
+    return true;
+}
+
+
+function logoutUser() {
+    sessionStorage.clear();
+    window.location.href = "loginUser.html";
+}
+
+// Disponibiliza as funções globalmente, se necessário
+window.loginUser = loginUser;
+window.checkLoginUser = checkLoginUser;
+window.logoutUser = logoutUser;

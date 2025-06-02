@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <title>Comprovante de Registro</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Comprovante de Registro</h1>
+        <p>Clique no botão abaixo para gerar seu código de comprovação único:</p>
+        <button id="gerarBtn">Gerar Comprovante</button>
+        <p id="mensagem" class="message" style="display:none;"></p>
+        <div id="comprovante" class="code-box" style="display:none;"></div>
+    </div>
+
+    <script>
+        function gerarCodigo() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let codigo = '';
+            for (let i = 0; i < 12; i++) {
+                codigo += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return codigo;
+        }
+
+        const btn = document.getElementById('gerarBtn');
+        const comprovanteDiv = document.getElementById('comprovante');
+        const mensagemP = document.getElementById('mensagem');
+
+        btn.addEventListener('click', () => {
+            const codigo = gerarCodigo();
+            comprovanteDiv.textContent = codigo;
+            comprovanteDiv.style.display = 'inline-block';
+
+            mensagemP.textContent = 'Registro realizado com sucesso!';
+            mensagemP.style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

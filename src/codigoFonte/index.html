@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-waste Disposal Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <header>
+        <h1>Ecobyte</h1>
+        <div class="nav">
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+        </div>
+    </header>
+    <div id="map"></div>
+    <div id="distance">Adicione pelo menos 2 marcadores para calcular a distância.</div> <!-- Exibição da distância -->
+    <script>
+        var map;
+        var markers = [];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+
+            map.addListener('click', function(event) {
+                addMarker(event.latLng);
+            });
+        }
+
+        function addMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+            markers.push(marker);
+
+            marker.addListener('click', function() {
+                removeMarker(marker);
+            });
+
+            updateDistance(); // Atualiza a distância ao adicionar um marcador
+        }
+
+        function removeMarker(marker) {
+            marker.setMap(null);
+            var index = markers.indexOf(marker);
+            if (index > -1) {
+                markers.splice(index, 1);
+            }
+            updateDistance(); // Atualiza a distância ao remover um marcador
+        }
+
+        function updateDistance() {
+            if (markers.length < 2) {
+                document.getElementById('distance').innerText = "Adicione pelo menos 2 marcadores para calcular a distância.";
+                return;
+            }
+
+            var totalDistance = 0;
+            for (var i = 0; i < markers.length - 1; i++) {
+                var distance = google.maps.geometry.spherical.computeDistanceBetween(
+                    markers[i].getPosition(),
+                    markers[i + 1].getPosition()
+                );
+                totalDistance += distance;
+            }
+
+            document.getElementById('distance').innerText = "Distância total entre os marcadores: " + (totalDistance / 1000).toFixed(2) + " km";
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9-3p8k9ev_0n8hTw1ord40_qZxKh7AYo&callback=initMap&libraries=geometry&v=weekly"
+    async defer></script>
+</body>
+</html>

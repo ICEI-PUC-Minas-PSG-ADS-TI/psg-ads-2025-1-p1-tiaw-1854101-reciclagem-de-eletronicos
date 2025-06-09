@@ -1,0 +1,27 @@
+{
+    "title": "E-waste Disposal Map",
+    "header": {
+        "siteName": "Ecobyte",
+        "navigation": [
+            {"name": "Início", "link": "#"},
+            {"name": "Sobre", "link": "#"},
+            {"name": "Serviços", "link": "#"},
+            {"name": "Contato", "link": "#"}
+        ]
+    },
+    "map": {
+        "id": "map",
+        "style": {
+            "height": "80%",
+            "width": "90%",
+            "border": "2px solid #4CAF50",
+            "borderRadius": "8px",
+            "boxShadow": "0 2px 10px rgba(0, 0, 0, 0.2)",
+            "margin": "0 auto"
+        }
+    },
+    "distance": {
+        "id": "distance",
+        "defaultMessage": "Adicione pelo menos 2 marcadores para calcular a distância."
+    }
+}

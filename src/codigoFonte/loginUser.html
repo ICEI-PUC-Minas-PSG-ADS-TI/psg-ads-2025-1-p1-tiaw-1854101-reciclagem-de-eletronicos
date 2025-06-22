@@ -30,11 +30,11 @@
             <li class="nav-item">
               <a class="nav-link" href="home.html">INÍCIO</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">MAPA</a></li>
+            <li class="nav-item"><a class="nav-link" href="Mapa.html">MAPA</a></li>
             <li class="nav-item">
               <a class="nav-link" href="cadastro.html">CADASTRO</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">PERFIL</a></li>
+            <li class="nav-item"><a class="nav-link" href="perfil.html">PERFIL</a></li>
           </ul>
         </div>
       </div>
@@ -60,7 +60,7 @@
     <script>
       document
         .getElementById("formLogin")
-        .addEventListener("submit", async (event) => {
+        .addEventListener("submit", (event) => {
           event.preventDefault();
           const email = document
             .getElementById("email")
@@ -68,9 +68,8 @@
             .toLowerCase();
           const senha = document.getElementById("password").value.trim();
 
-          const sucesso = await loginUser(email, senha);
+          const sucesso = loginUser(email, senha);
           if (sucesso) {
-            // Se loginUser retornou true, redireciona para home.html
             window.location.href = "home.html";
           } else {
             alert("Email ou senha inválidos");

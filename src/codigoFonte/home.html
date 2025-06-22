@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EcoByte - Reciclagem de Eletrônicos</title>
-    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,9 +23,11 @@
           return;
         }
 
-        // Se estiver logado, podemos exibir o nome dele
+        // Se estiver logado, exibir o nome dele
         const usuario = JSON.parse(usuarioStr);
-        document.getElementById("loginMessage").textContent = `Login: ${usuario.nome}`;
+        document.getElementById(
+          "loginMessage"
+        ).textContent = `Login: ${usuario.nome}`;
 
         // Conecta o botão de logout
         document.getElementById("logoutBtn").addEventListener("click", () => {
@@ -54,10 +55,18 @@
             <li class="nav-item">
               <a class="nav-link" href="home.html">INÍCIO</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">MAPA</a></li>
-            <li class="nav-item"><a class="nav-link" href="loginUser.html">LOGIN</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">PERFIL</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">AGENDAMENTO</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="Mapa.html">MAPA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="loginUser.html">LOGIN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="perfil.html">PERFIL</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="agendamento.html">AGENDAMENTO</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -83,7 +92,7 @@
           <a href="cadastro.html" class="btn btn-success me-3 m-3"
             >CADASTRE-SE COMO USUÁRIO</a
           >
-          <a href="#" class="btn btn-success">CADASTRE UM LOCAL</a>
+          <a href="cadastrodelocal.html" class="btn btn-success">CADASTRE UM LOCAL</a>
         </div>
       </div>
     </div>

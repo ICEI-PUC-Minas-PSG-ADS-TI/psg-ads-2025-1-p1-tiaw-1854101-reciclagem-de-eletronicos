@@ -1,170 +1,183 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>E-waste Disposal Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link para o arquivo CSS -->
-</head>
-<body>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="complements/css/styleMapa.css"
+    />
+    <!-- Link para o arquivo CSS -->
+  </head>
+  <body>
     <script>
-        const jsonData = {
-            "title": "E-waste Disposal Map",
-            "header": {
-                "siteName": "Ecobyte",
-                "navigation": [
-                    {"name": "Início", "link": "#"},
-                    {"name": "Sobre", "link": "#"},
-                    {"name": "Serviços", "link": "#"},
-                    {"name": "Contato", "link": "#"}
-                ]
-            },
-            "map": {
-                "id": "map",
-                "style": {
-                    "height": "80%",
-                    "width": "90%",
-                    "border": "2px solid #4CAF50",
-                    "borderRadius": "8px",
-                    "boxShadow": "0 2px 10px rgba(0, 0, 0, 0.2)",
-                    "margin": "0 auto"
-                }
-            },
-            "distance": {
-                "id": "distance",
-                "defaultMessage": "Adicione pelo menos 2 marcadores para calcular a distância."
-            },
-            "minDistance": {
-                "id": "minDistance"
-            }
-        };
+      const jsonData = {
+        title: "E-waste Disposal Map",
+        header: {
+          siteName: "Ecobyte",
+          navigation: [
+            { name: "Início", link: "home.html"},
+            { name: "Sobre", link: "#"},
+            { name: "Serviços", link: "#"},
+            { name: "Contato", link: "#"},
+          ],
+        },
+        map: {
+          id: "map",
+          style: {
+            height: "80%",
+            width: "90%",
+            border: "2px solid #4CAF50",
+            borderRadius: "8px",
+            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
+            margin: "0 auto",
+          },
+        },
+        distance: {
+          id: "distance",
+          defaultMessage:
+            "Adicione pelo menos 2 marcadores para calcular a distância.",
+        },
+        minDistance: {
+          id: "minDistance",
+        },
+      };
 
+      function populateHeader() {
+        const header = document.createElement("header");
 
-        function populateHeader() {
-            const header = document.createElement('header');
+        const h1 = document.createElement("h1");
+        h1.textContent = jsonData.header.siteName;
 
-            const h1 = document.createElement('h1');
-            h1.textContent = jsonData.header.siteName;
+        const navDiv = document.createElement("div");
+        navDiv.className = "nav";
 
-            const navDiv = document.createElement('div');
-            navDiv.className = 'nav';
+        jsonData.header.navigation.forEach((item) => {
+          const a = document.createElement("a");
+          a.href = item.link;
+          a.textContent = item.name;
+          navDiv.appendChild(a);
+        });
 
-            jsonData.header.navigation.forEach(item => {
-                const a = document.createElement('a');
-                a.href = item.link;
-                a.textContent = item.name;
-                navDiv.appendChild(a);
-            });
+        header.appendChild(h1);
+        header.appendChild(navDiv);
 
-            header.appendChild(h1);
-            header.appendChild(navDiv);
+        document.body.insertBefore(header, document.body.firstChild);
+      }
 
-            document.body.insertBefore(header, document.body.firstChild);
-        }
+      function setupMapAndDistance() {
+        const mapDiv = document.createElement("div");
+        mapDiv.id = jsonData.map.id;
+        mapDiv.style.height = jsonData.map.style.height;
+        mapDiv.style.width = jsonData.map.style.width;
+        mapDiv.style.border = jsonData.map.style.border;
+        mapDiv.style.borderRadius = jsonData.map.style.borderRadius;
+        mapDiv.style.boxShadow = jsonData.map.style.boxShadow;
+        mapDiv.style.margin = jsonData.map.style.margin;
+        document.body.appendChild(mapDiv);
 
-        function setupMapAndDistance() {
-            const mapDiv = document.createElement('div');
-            mapDiv.id = jsonData.map.id;
-            mapDiv.style.height = jsonData.map.style.height;
-            mapDiv.style.width = jsonData.map.style.width;
-            mapDiv.style.border = jsonData.map.style.border;
-            mapDiv.style.borderRadius = jsonData.map.style.borderRadius;
-            mapDiv.style.boxShadow = jsonData.map.style.boxShadow;
-            mapDiv.style.margin = jsonData.map.style.margin;
-            document.body.appendChild(mapDiv);
+        const distanceDiv = document.createElement("div");
+        distanceDiv.id = jsonData.distance.id;
+        distanceDiv.textContent = jsonData.distance.defaultMessage;
+        document.body.appendChild(distanceDiv);
 
-            const distanceDiv = document.createElement('div');
-            distanceDiv.id = jsonData.distance.id;
-            distanceDiv.textContent = jsonData.distance.defaultMessage;
-            document.body.appendChild(distanceDiv);
+        const minDistanceDiv = document.createElement("div");
+        minDistanceDiv.id = jsonData.minDistance.id;
+        minDistanceDiv.style.margin = "10px";
+        minDistanceDiv.style.fontSize = "16px";
+        minDistanceDiv.style.color = "#333";
+        minDistanceDiv.style.backgroundColor = "#fff";
+        minDistanceDiv.style.padding = "8px";
+        minDistanceDiv.style.borderRadius = "5px";
+        minDistanceDiv.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)";
+        minDistanceDiv.style.width = "90%";
+        minDistanceDiv.style.marginLeft = "auto";
+        minDistanceDiv.style.marginRight = "auto";
+        document.body.appendChild(minDistanceDiv);
+      }
 
-            const minDistanceDiv = document.createElement('div');
-            minDistanceDiv.id = jsonData.minDistance.id;
-            minDistanceDiv.style.margin = "10px";
-            minDistanceDiv.style.fontSize = "16px";
-            minDistanceDiv.style.color = "#333";
-            minDistanceDiv.style.backgroundColor = "#fff";
-            minDistanceDiv.style.padding = "8px";
-            minDistanceDiv.style.borderRadius = "5px";
-            minDistanceDiv.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)";
-            minDistanceDiv.style.width = "90%";
-            minDistanceDiv.style.marginLeft = "auto";
-            minDistanceDiv.style.marginRight = "auto";
-            document.body.appendChild(minDistanceDiv);
-        }
-
-        populateHeader();
-        setupMapAndDistance();
+      populateHeader();
+      setupMapAndDistance();
     </script>
 
     <script>
-        var map;
-        var markers = [];
+      var map;
+      var markers = [];
 
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
-            });
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 8,
+        });
 
-            map.addListener('click', function(event) {
-                addMarker(event.latLng);
-            });
+        map.addListener("click", function (event) {
+          addMarker(event.latLng);
+        });
+      }
+
+      function addMarker(location) {
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+        markers.push(marker);
+
+        marker.addListener("click", function () {
+          removeMarker(marker);
+        });
+
+        updateDistance();
+      }
+
+      function removeMarker(marker) {
+        marker.setMap(null);
+        var index = markers.indexOf(marker);
+        if (index > -1) {
+          markers.splice(index, 1);
+        }
+        updateDistance();
+      }
+
+      function updateDistance() {
+        var distanceDiv = document.getElementById("distance");
+        var minDistanceDiv = document.getElementById("minDistance");
+
+        if (markers.length < 2) {
+          distanceDiv.innerText = jsonData.distance.defaultMessage;
+          minDistanceDiv.innerText = "";
+          return;
         }
 
-        function addMarker(location) {
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map
-            });
-            markers.push(marker);
+        var totalDistance = 0;
+        var minDistance = Number.MAX_VALUE;
 
-            marker.addListener('click', function() {
-                removeMarker(marker);
-            });
-
-            updateDistance(); 
+        for (var i = 0; i < markers.length - 1; i++) {
+          var distance = google.maps.geometry.spherical.computeDistanceBetween(
+            markers[i].getPosition(),
+            markers[i + 1].getPosition()
+          );
+          totalDistance += distance;
+          if (distance < minDistance) {
+            minDistance = distance;
+          }
         }
 
-        function removeMarker(marker) {
-            marker.setMap(null);
-            var index = markers.indexOf(marker);
-            if (index > -1) {
-                markers.splice(index, 1);
-            }
-            updateDistance();
-        }
-
-        function updateDistance() {
-            var distanceDiv = document.getElementById('distance');
-            var minDistanceDiv = document.getElementById('minDistance');
-
-            if (markers.length < 2) {
-                distanceDiv.innerText = jsonData.distance.defaultMessage;
-                minDistanceDiv.innerText = "";
-                return;
-            }
-
-            var totalDistance = 0;
-            var minDistance = Number.MAX_VALUE;
-
-            for (var i = 0; i < markers.length - 1; i++) {
-                var distance = google.maps.geometry.spherical.computeDistanceBetween(
-                    markers[i].getPosition(),
-                    markers[i + 1].getPosition()
-                );
-                totalDistance += distance;
-                if (distance < minDistance) {
-                    minDistance = distance;
-                }
-            }
-
-            distanceDiv.innerText = "Distância total entre os marcadores: " + (totalDistance / 1000).toFixed(2) + " km";
-            minDistanceDiv.innerText = "Menor distância entre marcadores adjacentes: " + (minDistance / 1000).toFixed(2) + " km";
-        }
+        distanceDiv.innerText =
+          "Distância total entre os marcadores: " +
+          (totalDistance / 1000).toFixed(2) +
+          " km";
+        minDistanceDiv.innerText =
+          "Menor distância entre marcadores adjacentes: " +
+          (minDistance / 1000).toFixed(2) +
+          " km";
+      }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9-3p8k9ev_0n8hTw1ord40_qZxKh7AYo&callback=initMap&libraries=geometry&v=weekly"
-    async defer></script>
-</body>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9-3p8k9ev_0n8hTw1ord40_qZxKh7AYo&callback=initMap&libraries=geometry&v=weekly"
+      async
+      defer
+    ></script>
+  </body>
 </html>
-

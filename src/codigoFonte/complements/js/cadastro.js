@@ -1,15 +1,12 @@
-const BASE_URL = "http://localhost:3000";
-
-// Captura o formulário pelo ID
+// Captura o formulário
 const formCadastro = document.getElementById("formCadastro");
 if (!formCadastro) {
   console.error("ERRO: Não encontrou <form id='formCadastro'> no HTML.");
 }
 
-formCadastro.addEventListener("submit", async function (event) {
+formCadastro.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  // Pega valores dos campos
   const nome = document.getElementById("nome").value.trim();
   const email = document.getElementById("email").value.trim().toLowerCase();
   const senha = document.getElementById("password").value;
@@ -19,32 +16,24 @@ formCadastro.addEventListener("submit", async function (event) {
     return;
   }
 
-  //Envia o nome email e senha para o backend
-  const payload = { nome, email, senha };
+  // Busca usuários já cadastrados no localStorage
+  const usuariosSalvos = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-  try {
-    const resposta = await fetch(`${BASE_URL}/usuarios`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
+  // Verifica se o email já existe
+  const usuarioExistente = usuariosSalvos.find(usuario => usuario.email === email);
 
-    if (resposta.status === 201) {
-      //Cadastro realizado com sucesso
-      alert("Cadastro realizado com sucesso! Agora você pode fazer login.");
-      window.location.href = "loginUser.html";
-    } else if (resposta.status === 409 || resposta.status === 400) {
-      //Erro no cadastro
-      const erroJson = await resposta.json();
-      alert(erroJson.erro || "Já existe um usuário com esse email.");
-    } else {
-      console.error("Erro inesperado no cadastro:", resposta.status);
-      alert("Não foi possível cadastrar no momento. Tente novamente mais tarde.");
-    }
-  } catch (err) {
-    console.error("Falha de rede ao cadastrar:", err);
-    alert("Erro ao conectar com o servidor. Tente novamente mais tarde.");
+  if (usuarioExistente) {
+    alert("Já existe um usuário com esse email.");
+    return;
   }
+
+  // Cria novo usuário
+  const novoUsuario = { nome, email, senha };
+
+  // Adiciona ao array e salva novamente
+  usuariosSalvos.push(novoUsuario);
+  localStorage.setItem("usuarios", JSON.stringify(usuariosSalvos));
+
+  alert("Cadastro realizado com sucesso! Agora você pode fazer login.");
+  window.location.href = "loginUser.html";
 });

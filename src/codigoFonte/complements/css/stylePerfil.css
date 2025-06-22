@@ -97,7 +97,7 @@
   
   .menu-item:hover {
     background-color: var(--verde-secundario);
-    transform: translateX(8px);
+    transform:scale(1.1);
   }
   
   .logout {
@@ -111,7 +111,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    animation: pulsar 2s infinite;
     transition: background-color 0.3s;
   }
   
